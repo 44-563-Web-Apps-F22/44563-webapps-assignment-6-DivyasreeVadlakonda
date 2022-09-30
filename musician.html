@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
     <title>
-       My first javascript
+        My first javascript
     </title>
- </head>
+</head>
+
 <body>
-<h1>Musician guess by Divya Sree Vadlakonda</h1>
-<h2>Getting input</h2>
+    <h1>Musician guess by Divya Sree Vadlakonda</h1>
+    <h2>Getting input</h2>
 
-<form>
-    <label for="form1_age">Enter the secret musician name </label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value=John Lennon> <br>
+    <form>
+        <label for="musician_name">Enter the secret musician name </label>
+        <input type="password" id="musician_name" name="form1_age" min=10 max=50 step=2 value="John Lennon"> <br>
 
-    <label for="form1_nick">Guess the musician </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <label for="guess_musician">Guess the musician </label>
+        <input type="text" id="guess_musician" name="guess_musician" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Get values from form">
-</form>
+        <input type="button" onclick="checkGuess()" value="Check the guess">
+    </form>
 
+    <p id="result">This text will be replaced </p>
 
-<p id="result">This text will be replaced </p>
+    <script>
+        correct = 0
+        wrong = 0
+        function checkGuess() {
+            console.log("Getting form values")
+            name = document.getElementById("musician_name").value
+            musician = document.getElementById("guess_musician").value
 
-<script> 
-correct=0
-wrong=0
-function checkGuess(){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    
-    out = document.getElementById("result")
-    if(age==nick){
-        correct= correct+1
-        alert("You got it right")
-        out.innerHTML = "Correct "+correct
-    } else {
-        wrong = wrong +1
-        alert("Wrong Musician")
-        out.innerHTML = "Wrong "+wrong
-    }
-}
-</script>
+            out = document.getElementById("result")
+            if (name == musician) {
+                correct = correct + 1
+                alert("You got it right")
+                out.innerHTML = "Correct count " + correct
+            } else {
+                wrong = wrong + 1
+                alert("Wrong Musician")
+                out.innerHTML = "Wrong count " + wrong
+            }
+        }
+    </script>
 
 </body>
-</html> 
+
+</html>
