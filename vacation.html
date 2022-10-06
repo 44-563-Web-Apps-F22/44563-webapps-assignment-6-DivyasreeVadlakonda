@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>
+        Going to vacation
+    </title>
+ </head>
+<body>
+<h2>Divya Sree Vadlakonda selects a vacation</h2>
+<h2>Getting input</h2>
+    <form>
+        <input type="checkbox" id="air" name="vacation" value="true">
+        <label for="air">Travel by Air</label><br>
+        <input type="checkbox" id="domestic" name="vacation" value="true">
+        <label for="domestic">Domestic</label><br>
+        <input type="checkbox" id="resort" name="vacation" value="false">
+        <label for="resort">Resort</label><br>
+        <input type="button" value="Select a vacation" onclick="selectVacation()">
+   
+    </form>
+    <br>
+    
+    <script>
+        var my_vacation={};
+        function selectVacation(){
+            let a=document.getElementById("air").checked
+            let d=document.getElementById("domestic").checked
+            let r=document.getElementById("resort").checked
+    if(a)
+    {
+        my_vacation.air=true;
+    }
+    else
+    {
+        my_vacation.air=false;
+    }
+    if(d)
+    {
+        my_vacation.domestic=true;
+    }
+    else
+    {
+        my_vacation.domestic=false;
+    }
+    if(r)
+    {
+        my_vacation.resort=true;
+    }
+    else
+    {
+        my_vacation.resort=false;
+    }
+    
+
+    document.getElementById("final").innerHTML=JSON.stringify(my_vacation)
+}
+    </script>
+    <form>
+        <label for="city">Enter a city</label>
+        <input type="text" id="city" name="name" value="city"> <br>
+        
+        <label for="price">Enter price</label>
+        <input type="text" id="price" name="price"> <br>
+    
+        <input type="button"  value="Update the vacation" onclick="updateVacation()">
+        <p id="final">A vacation is selected and also updated</p>
+    </form> 
+<script>
+    function updateVacation()
+{
+    let city=document.getElementById("city").value;
+    let price=document.getElementById("price").value;
+    my_vacation["city"]=city;
+    my_vacation["price"]=price;
+
+    document.getElementById("final").innerHTML=JSON.stringify(my_vacation)
+}
+
+   </script>
+</body>
+</html> 
