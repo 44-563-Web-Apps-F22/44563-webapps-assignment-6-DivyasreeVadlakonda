@@ -19,7 +19,7 @@
         <label for="guess_musician">Guess the musician </label>
         <input type="password" id="password" name="password" autofocus> <br>
 
-        <input type="button" onclick="checkGuess();EndoftheGame()" value="Check the guess">
+        <input type="button" onclick="checkGuess();Alert()" value="Check the guess">
     </form>
 
     <p id="result">This text will be replaced </p>
@@ -70,7 +70,7 @@
         }
     </script>
     <script>
-        function EndoftheGame()
+        function Alert()
         {
             while (wrong==3) 
             {
